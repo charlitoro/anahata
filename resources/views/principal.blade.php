@@ -10,9 +10,9 @@
     </div>
 
     <div class="hero-content">
-      <h2>Business<br><span>Consulting</span></h2>
+      <h2>Belleza<br><span>Estetica</span></h2>
       <div>
-        <a href="#" class="btn-banner">Our Service</a> 
+        <a href="#" class="btn-banner">Nuestros Servicios</a> 
       </div>
     </div>
 

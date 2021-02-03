@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="{{url('/assets/anahata/css/style.css')}}">
 
     <title>Estetica Anahata</title>
+    <link rel="shortcut icon" href="{{URL::asset('assets/anahata/img/chakra.png')}}">
   </head>
   <body id="body">
 

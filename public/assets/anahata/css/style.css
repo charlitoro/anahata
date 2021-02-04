@@ -184,7 +184,7 @@ h1, h2, h3, h4, h5, h6 {
 #hero {
     width: 100%;
     position: relative;
-    background: url(../img/intro-carousel/banner-bg.png) center bottom no-repeat;
+    background: url(../img/intro-carousel/fondo6.jpg) center bottom no-repeat;
     background-size: cover;
     padding: 200px 0 120px 0;
 	top:0px;
@@ -942,7 +942,7 @@ p.help-block li {
 /* Call To Action Section
 --------------------------------*/
 #call-to-action {
-  background: #278bf2;
+  background: #1C543B;
   background-size: cover;
   padding: 40px 0;
 }
@@ -1099,7 +1099,7 @@ p.help-block li {
 }
 
 #contact .contact-info a:hover {
-  color: #596bf3;
+  color: #1C543B;
 }
 
 #contact .contact-address, #contact .contact-phone, #contact .contact-email {
@@ -1189,7 +1189,7 @@ p.help-block li {
 # Footer
 --------------------------------------------------------------*/
 #footer {
-  background: #071e33;
+  background: #0F2E20;
   padding: 0 0 30px 0;
   font-size: 14px;
   color: #fff;

@@ -34,7 +34,7 @@
             <div class="row">
                 <div class="col-lg-6 about-img">
                 <!--<img src="" alt="">-->
-                <img src="{{URL::asset('assets/anahata/img/Poster.jpeg')}}" alt="">
+                <img src="{{URL::asset('assets/anahata/img/yoga.jpg')}}" alt="">
             </div>
 
             <div class="col-lg-6 content">
@@ -50,48 +50,57 @@
             </div>
         </div>
 
-      </div>
+    </div>
     </section><!-- #about -->
 
     <!--==========================
-      Services Section
+    Services Section
     ============================-->
     <section id="services">
-      <div class="container">
-        <div class="section-header">
-          <h2>Algunos de nuestros servicios</h2>
-          <p>Anahata te ofrece un amplio catálogo de servicios, danos el gusto de atenderte en la comodidad de tu casa.</p>
-        </div>
-
-        <div class="row">
-
-          <div class="col-lg-4">
-            <div class="box wow fadeInLeft">
-              <div class="icon svgImg"><img src="{{URL::asset('assets/anahata/img/pedicure.png')}}" alt=""></div>
-              <h4 class="title"><a href="">Manicure y Pedicure</a></h4>
-              <p class="description">Tradicional o semipermanente para damas y caballeros.</p>
+        <div class="container">
+            <div class="section-header">
+                <h2>Algunos de nuestros servicios</h2>
+                <p>Anahata te ofrece un amplio catálogo de servicios, danos el gusto de atenderte en la comodidad de tu casa.</p>
             </div>
-          </div>
 
-          <div class="col-lg-4">
-            <div class="box wow fadeInRight">
-               <div class="icon svgImg"><img src="{{URL::asset('assets/anahata/img/limp_facial.png')}}" alt=""></div>
-              <h4 class="title"><a href="">Limpieza facial</a></h4>
-              <p class="description">General o profunda. tratamientos para acné</p>
-            </div>
-          </div>
+            <div class="row">
 
-          <div class="col-lg-4">
-            <div class="box wow fadeInLeft" data-wow-delay="0.2s">
-               <div class="icon svgImg"><img src="{{URL::asset('assets/anahata/img/repolarizacion.png')}}" alt=""></div>
-              <h4 class="title"><a href="">Repolarización capilar</a></h4>
-              <p class="description">Reestructurar, revitalizar, nutrir, hidratar o para la caida.</p>
-            </div>
-          </div>
+                <div class="col-lg-4">
+                    <div class="box wow fadeInLeft">
+                    <div class="icon svgImg"><img src="{{URL::asset('assets/anahata/img/pedicure.png')}}" alt=""></div>
+                        <h4 class="title"><a href="">Manicure y Pedicure</a></h4>
+                        <p class="description">Tradicional o semipermanente para damas y caballeros.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="box wow fadeInRight">
+                    <div class="icon svgImg"><img src="{{URL::asset('assets/anahata/img/limp_facial.png')}}" alt=""></div>
+                        <h4 class="title"><a href="">Limpieza facial</a></h4>
+                        <p class="description">General o profunda. tratamientos para acné</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="box wow fadeInLeft" data-wow-delay="0.2s">
+                    <div class="icon svgImg"><img src="{{URL::asset('assets/anahata/img/repolarizacion.png')}}" alt=""></div>
+                        <h4 class="title"><a href="">Repolarización capilar</a></h4>
+                        <p class="description">Reestructurar, revitalizar, nutrir, hidratar o para la caida.</p>
+                    </div>
+                </div>
+
+                <!--<div class="col-lg-4">
+                    <div class="box wow fadeInLeft" data-wow-delay="0.2s">
+                    <div class="icon svgImg"><img src="{{URL::asset('assets/anahata/img/piernas.png')}}" alt=""></div>
+                        <h4 class="title"><a href="">Depilación en cera</a></h4>
+                        <p class="description">Piernas, cejas, bozo, axilas.</p>
+                    </div>
+                </div>-->
+                <img src="{{URL::asset('assets/anahata/img/poster_total.jpeg')}}" alt="Poster">
  
-        </div>
+            </div>
 
-      </div>
+    </div>
     </section><!-- #services -->
 
     <!--==========================

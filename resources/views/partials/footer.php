@@ -4,10 +4,10 @@
   <footer id="footer">
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong>BRANDO</strong>. All Rights Reserved
+        &copy; Copyright <strong>ANAHATA</strong>. Todos los derechos reservados
       </div>
       <div class="credits"> 
-        Template by <a href="https://webthemez.com/consulting/">WebThemez</a>
+        Plantilla proporcionado por <a href="https://webthemez.com/consulting/">WebThemez</a>
       </div>
     </div>
   </footer><!-- #footer -->

@@ -31,7 +31,7 @@
     <div class="container">
 
       <div id="logo" class="pull-left">
-          <h1><a href="index.html" id="body" class="scrollto"><span><i class="ion 	
+          <h1><a href="{{url('/')}}" id="body" class="scrollto"><span><i class="ion 	
             ion-android-notifications"></i> </span>Anahata</a></h1> 
         <!-- <a href="#body"><img src="img/logo.png" alt="" title="" /></a>-->
       </div>

@@ -12,7 +12,7 @@
         <div class="hero-content">
             <h2>Salud, bienestar y belleza<br><span>Estética</span></h2>
             <div>
-                <a href="#" class="btn-banner">Nuestros Servicios</a> 
+                <a href="{{url('/services')}}" class="btn-banner">Nuestros Servicios</a> 
             </div>
         </div>
 

@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Auth\Middleware;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,17 +15,27 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('principal');
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\MainController;
+use App\Http\Controllers\ServicesController;
+use App\Http\Controllers\ScheduleController;
+
+
+
+Route::get('login', function(){
+    return 'login usuario';
 });
 
-
-
-Route::get('servicios', function () {
-    return 'Detalle de servicios';
+Route::get('logout', function(){
+    return 'Logout Usuario';
 });
 
-Route::get('servicios/agendar', function () {
-    return 'Agendar turno';
-});
+Route::get('/', [MainController::class, 'getMain']); 
+
+Route::get('services', [ServicesController::class, 'getServices']); 
+
+Route::get('schedule', [ScheduleController::class, 'getSchedule']); 
+
+Route::get('about', [AboutController::class, 'getAbout']); 
+
 

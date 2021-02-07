@@ -6,7 +6,7 @@
 
         <div class="hero-banner">
             <!-- TODO: Pending image src -->
-            <img src="" alt="" class="img-fluid">
+            <img src="#" alt="" class="img-fluid">
         </div>
 
         <div class="hero-content">
@@ -35,20 +35,22 @@
                 <div class="col-lg-6 about-img">
                 <!--<img src="" alt="">-->
                 <img src="{{URL::asset('assets/anahata/img/yoga.jpg')}}" alt="">
-            </div>
+                </div>
 
             <div class="col-lg-6 content">
                 <h2>Trabajamos con amor especialmente para ti!!!</h2>
                 <h3>El bienestar físico es un reflejo del bienestar interior</h3>
-			    <p>Por eso traemos para tí la nueva linea de estética alternativa, donde además de los servicios tradicionales de belleza, podrás trabajar en tu interior.</p>
+			          <p>Por eso traemos para tí la nueva linea de estética alternativa, donde además de los servicios tradicionales de belleza, podrás trabajar en tu interior.</p>
                 <ul>
                     <li><i class="icon ion-ios-checkmark-outline"></i> Sesiones de Reiki Usui para sanación física, emocional y espiritual.</li>
                     <li><i class="icon ion-ios-checkmark-outline"></i> Yoga para la salud y equilibrio.</li>
                     <li><i class="icon ion-ios-checkmark-outline"></i> Meditaciones, constelaciones y tratamiento con método milagros</li>
                     <li><i class="icon ion-ios-checkmark-outline"></i> Estética general</li>
                 </ul> 
+                
             </div>
         </div>
+        
 
     </div>
     </section><!-- #about -->
@@ -62,8 +64,10 @@
                 <h2>Algunos de nuestros servicios</h2>
                 <p>Anahata te ofrece un amplio catálogo de servicios, danos el gusto de atenderte en la comodidad de tu casa.</p>
             </div>
+            
 
             <div class="row">
+            
 
                 <div class="col-lg-4">
                     <div class="box wow fadeInLeft">
@@ -89,17 +93,43 @@
                     </div>
                 </div>
 
-                <!--<div class="col-lg-4">
+                <div class="col-lg-4">
                     <div class="box wow fadeInLeft" data-wow-delay="0.2s">
                     <div class="icon svgImg"><img src="{{URL::asset('assets/anahata/img/piernas.png')}}" alt=""></div>
                         <h4 class="title"><a href="">Depilación en cera</a></h4>
                         <p class="description">Piernas, cejas, bozo, axilas.</p>
                     </div>
-                </div>-->
-                <img src="{{URL::asset('assets/anahata/img/poster_total.jpeg')}}" alt="Poster">
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="box wow fadeInLeft" data-wow-delay="0.2s">
+                    <div class="icon svgImg"><img src="{{URL::asset('assets/anahata/img/alisado.png')}}" alt=""></div>
+                        <h4 class="title"><a href="">Alisado permanente</a></h4>
+                        <p class="description">Alisado con keratina.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="box wow fadeInLeft" data-wow-delay="0.2s">
+                    <div class="icon svgImg"><img src="{{URL::asset('assets/anahata/img/tintes.png')}}" alt=""></div>
+                        <h4 class="title"><a href="">Tintes</a></h4>
+                        <p class="description">Colorimetría personalizada.</p>
+                    </div>
+                </div>
+                
+                  
+                
  
             </div>
-
+            
+            <div class="btn_derecha">
+                    <a href="{{url('/services')}}" class="btn btn-success btn-lg ">Ver más</a> 
+            </div>
+                
+            <div class="poster">
+              <img src="{{URL::asset('assets/anahata/img/poster_total.jpeg')}}" alt="Poster">
+            </div>
+            
     </div>
     </section><!-- #services -->
 
@@ -109,21 +139,26 @@
     <section id="clients" class="wow fadeInUp">
       <div class="container">
         <div class="section-header">
-         
-          <h2>Clientes</h2>
-          <p> Regístrate y forma parte de nuestros distinguidos clientes..</p>
-          
+        
+          <h2>Pregunta por nuestras grandes promociones!!</h2>
+          <div class="promo">
+          <img src="{{URL::asset('assets/anahata/img/clients/caballeros.png')}}" alt="" >
+          <img src="{{URL::asset('assets/anahata/img/clients/promocion.jpeg')}}" alt="">
+          <img src="{{URL::asset('assets/anahata/img/clients/pestañas.png')}}" alt="">
+          <!--<p> Regístrate y forma parte de nuestros distinguidos clientes..</p>-->
+          </div>
           
         </div>
-
-        <div class="owl-carousel clients-carousel">
-          <img src="img/clients/client-1.png" alt="">
-          <img src="img/clients/client-2.png" alt="">
+        
+        <!--<div class="owl-carousel clients-carousel">
+          <a href="{{url('/services')}}" class="btn btn-success btn-lg ">Linea especial masculina</a> 
+          <img src="{{URL::asset('assets/anahata/img/clients/caballeros.png')}}" alt="">
+          <img src="{{URL::asset('assets/anahata/img/clients/promocion.jpeg')}}" alt="">
           <img src="img/clients/client-3.png" alt="">
           <img src="img/clients/client-4.png" alt="">
           <img src="img/clients/client-5.png" alt="">
           <img src="img/clients/client-6.png" alt="">
-        </div>
+        </div>-->
 
       </div>
     </section><!-- #clients --> 
@@ -134,37 +169,35 @@
       <div class="container">
         <div class="section-header">
           <h2>Testimonios</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt fugiat culpa esse aute nulla. duis fugiat culpa esse aute nulla ipsum velit export irure minim illum fore</p>
+          <p>Deja que nuestros clientes te cuenten su experiencia en Anahata</p>
         </div>
         <div class="owl-carousel testimonials-carousel">
 
             <div class="testimonial-item">
-              <p>Dolores quae porro consequatur aliquam, incidunt fugiat culpa esse aute nulla. duis fugiat culpa esse aute nulla ipsum velit export irure minim illum fore
-                
+              <p>
+                Súper recomendada, el arreglo de uñas es espectacular!!
               </p> 
-              <h3>Mrio James</h3>
-              <h4>CEO &amp; Founder</h4>
+              <h3>Maria Diaz</h3>
+              <!--<h4>CEO &amp; Founder</h4>-->
             </div>
 
             <div class="testimonial-item">
               <p>
-                Dolores quae porro consequatur aliquam, incidunt fugiat culpa esse aute nulla. duis fugiat culpa esse aute nulla ipsum velit export irure minim illum fore
-                
+               Son muy profesionales en la atención y los servicios, siempre me sorprenden.
               </p> 
-              <h3>Finton Gofnes</h3>
-              <h4>CTO</h4>
+              <h3>Diana Andrade</h3>
+              <!--<h4>CTO</h4>-->
             </div>
 
             <div class="testimonial-item">
               <p>
-                Dolores quae porro consequatur aliquam, incidunt fugiat culpa esse aute nulla. duis fugiat culpa esse aute nulla ipsum velit export irure minim illum fore
-                
+                Me hago arreglar en Anahata hace más de cinco años y siempre he quedado muy conforme con los servicios.
               </p> 
-              <h3>Marcus Kell</h3>
-              <h4>Marketing</h4>
+              <h3>Carlos Guerrero</h3>
+              <!--<h4>Marketing</h4>-->
             </div>
 
-            <div class="testimonial-item">
+            <!--<div class="testimonial-item">
               <p>
                 Dolores quae porro consequatur aliquam, incidunt fugiat culpa esse aute nulla. duis fugiat culpa esse aute nulla ipsum velit export irure minim illum fore
                 
@@ -180,7 +213,9 @@
               </p> 
               <h3>Larry Hanson</h3>
               <h4>Investor</h4>
-            </div>
+            </div>-->
+
+            
 
         </div>
 
@@ -198,7 +233,7 @@
             <p class="cta-text">Regístrate como cliente y agenda tu turno.</p>
           </div>
           <div class="col-lg-3 cta-btn-container text-center">
-            <a class="cta-btn align-middle" href="#contact">Agendar turno</a>
+            <a class="cta-btn align-middle" href="{{url('/schedule')}}">Agendar turno</a>
           </div>
         </div>
 

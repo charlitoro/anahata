@@ -126,7 +126,7 @@ h1, h2, h3, h4, h5, h6 {
     z-index: 9;
 	top:0px;
   padding: 20px 0;     
-	    background: transparent;
+	background: transparent;
 }
 #header #logo h1 {
   font-size: 28px;
@@ -739,10 +739,11 @@ Inner Banner
 }
 
 #clients img {
+  
   max-width: 100%;
-  opacity: 0.5;
+  opacity: 1;
   transition: 0.3s;
-  padding: 15px 0;
+  padding: 15px 0 ;
 }
 
 #clients img:hover {
@@ -757,8 +758,8 @@ Inner Banner
 #clients .owl-dot {
   display: inline-block;
   margin: 0 5px;
-  width: 12px;
-  height: 12px;
+  width: 15px;
+  height: 15px;
   border-radius: 50%;
   background-color: #ddd;
 }
@@ -1217,3 +1218,21 @@ p.help-block li {
     height: 70px;
     margin: 0 auto;
 }
+
+.btn_derecha{
+  display: flex;
+  justify-content: center;
+}
+
+.poster{
+  display: block;
+  padding-top: 30px;
+}
+
+.promo{
+  display:inline-block;
+  
+}
+
+
+

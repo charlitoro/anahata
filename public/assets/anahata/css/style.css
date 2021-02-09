@@ -523,7 +523,7 @@ Inner Banner
 #innerBanner{
 	padding: 138px 0 64px;
 	text-align:center;
-	background: #278bf2;
+	background: #031801;
 }
 #innerBanner h2{
 	color:#fff;
@@ -765,6 +765,43 @@ Inner Banner
 }
 
 #clients .owl-dot.active {
+  background-color: #596bf3;
+}
+
+/* Promo Section
+--------------------------------*/
+#promo {
+  padding: 60px 0;
+  background: #07cc91;
+}
+
+#promo img {
+  
+  max-width: 100%;
+  opacity: 1;
+  transition: 0.3s;
+  padding: 15px 0 ;
+}
+
+#promo img:hover {
+  opacity: 1;
+}
+
+#promo .owl-nav, #clients .owl-dots {
+  margin-top: 5px;
+  text-align: center;
+}
+
+#promo .owl-dot {
+  display: inline-block;
+  margin: 0 5px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #ddd;
+}
+
+#promo .owl-dot.active {
   background-color: #596bf3;
 }
 

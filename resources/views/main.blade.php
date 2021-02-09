@@ -68,7 +68,7 @@
 
             <div class="row">
             
-
+            <!--TODO:Hacer llamado a la base de datos para listar servicios-->
                 <div class="col-lg-4">
                     <div class="box wow fadeInLeft">
                     <div class="icon svgImg"><img src="{{URL::asset('assets/anahata/img/pedicure.png')}}" alt=""></div>
@@ -93,29 +93,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-4">
-                    <div class="box wow fadeInLeft" data-wow-delay="0.2s">
-                    <div class="icon svgImg"><img src="{{URL::asset('assets/anahata/img/piernas.png')}}" alt=""></div>
-                        <h4 class="title"><a href="">Depilación en cera</a></h4>
-                        <p class="description">Piernas, cejas, bozo, axilas.</p>
-                    </div>
-                </div>
-
-                <div class="col-lg-4">
-                    <div class="box wow fadeInLeft" data-wow-delay="0.2s">
-                    <div class="icon svgImg"><img src="{{URL::asset('assets/anahata/img/alisado.png')}}" alt=""></div>
-                        <h4 class="title"><a href="">Alisado permanente</a></h4>
-                        <p class="description">Alisado con keratina.</p>
-                    </div>
-                </div>
-
-                <div class="col-lg-4">
-                    <div class="box wow fadeInLeft" data-wow-delay="0.2s">
-                    <div class="icon svgImg"><img src="{{URL::asset('assets/anahata/img/tintes.png')}}" alt=""></div>
-                        <h4 class="title"><a href="">Tintes</a></h4>
-                        <p class="description">Colorimetría personalizada.</p>
-                    </div>
-                </div>
+                
                 
                   
                 
@@ -126,9 +104,9 @@
                     <a href="{{url('/services')}}" class="btn btn-success btn-lg ">Ver más</a> 
             </div>
                 
-            <div class="poster">
+            <!--<div class="poster">
               <img src="{{URL::asset('assets/anahata/img/poster_total.jpeg')}}" alt="Poster">
-            </div>
+            </div>-->
             
     </div>
     </section><!-- #services -->
@@ -136,29 +114,29 @@
     <!--==========================
       Clients Section
     ============================-->
-    <section id="clients" class="wow fadeInUp">
+    <section id="promo" class="wow fadeInUp">
       <div class="container">
         <div class="section-header">
         
           <h2>Pregunta por nuestras grandes promociones!!</h2>
-          <div class="promo">
+          <!--<div class="promo">
           <img src="{{URL::asset('assets/anahata/img/clients/caballeros.png')}}" alt="" >
           <img src="{{URL::asset('assets/anahata/img/clients/promocion.jpeg')}}" alt="">
           <img src="{{URL::asset('assets/anahata/img/clients/pestañas.png')}}" alt="">
-          <!--<p> Regístrate y forma parte de nuestros distinguidos clientes..</p>-->
-          </div>
+          <p> Regístrate y forma parte de nuestros distinguidos clientes..</p>
+          </div>-->
           
         </div>
         
-        <!--<div class="owl-carousel clients-carousel">
-          <a href="{{url('/services')}}" class="btn btn-success btn-lg ">Linea especial masculina</a> 
+        <div class="owl-carousel clients-carousel">
+          <!--<a href="{{url('/services')}}" class="btn btn-success btn-lg ">Linea especial masculina</a> -->
           <img src="{{URL::asset('assets/anahata/img/clients/caballeros.png')}}" alt="">
           <img src="{{URL::asset('assets/anahata/img/clients/promocion.jpeg')}}" alt="">
           <img src="img/clients/client-3.png" alt="">
           <img src="img/clients/client-4.png" alt="">
           <img src="img/clients/client-5.png" alt="">
           <img src="img/clients/client-6.png" alt="">
-        </div>-->
+        </div>
 
       </div>
     </section><!-- #clients --> 

@@ -21,6 +21,7 @@ use App\Http\Controllers\ServicesController;
 use App\Http\Controllers\ScheduleController;
 
 
+
 Route::get('/', [MainController::class, 'getMain']); 
 
 Route::get('services', [ServicesController::class, 'getServices']); 
@@ -30,6 +31,10 @@ Route::get('schedule', [ScheduleController::class, 'getSchedule'])->middleware('
 Route::get('about', [AboutController::class, 'getAbout']); 
 
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Auth::routes();
 

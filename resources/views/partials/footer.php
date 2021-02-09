@@ -1,6 +1,7 @@
 <!--==========================
     Footer
   ============================-->
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
   <footer id="footer">
     <div class="container">
       <div class="copyright">

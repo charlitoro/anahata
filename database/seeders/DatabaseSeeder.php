@@ -38,16 +38,16 @@ class DatabaseSeeder extends Seeder
 				$user = new User;
 				$user->name = 'Erika Orbes';
 				$user->email = 'erika.ax.18@gmail.com';
-                $user->address = 'cra 36 b 5a-27 Anganoy';
-                $user->phone = '3155270969';
+        $user->address = 'cra 36 b 5a-27 Anganoy';
+        $user->phone = '3155270969';
 				$user->password = bcrypt('@ErikaOrbes24');
 				$user->save();
 
 				$user2 = new User;
 				$user2->name = 'Ana Rodriguez';
 				$user2->email = 'anitaro@gmail.com';
-                $user->address = 'Mz e cs 10 Lorenzo';
-                $user->phone = '3116634808';
+        $user->address = 'Mz e cs 10 Lorenzo';
+        $user->phone = '3116634808';
 				$user2->password = bcrypt('AnitaRodriguez123');
 				$user2->save();
 				

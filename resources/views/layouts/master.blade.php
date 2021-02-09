@@ -33,7 +33,7 @@
       <div id="logo" class="pull-left">
           <h1><a href="{{url('/')}}" id="body" class="scrollto"><span><i class="ion 	
             ion-android-notifications"></i> </span>Anahata</a></h1> 
-        <!-- <a href="#body"><img src="img/logo.png" alt="" title="" /></a>-->
+        <!--<a href="#"><img src="{{URL::asset('assets/anahata/img/chakra.png')}}" alt="" title="" /></a>-->
       </div>
 
       @include('partials.nav-bar')
@@ -56,6 +56,8 @@
     <script src="{{url('/assets/anahata/lib/owlcarousel/owl.carousel.min.js')}}"></script>
     <script src="{{url('/assets/anahata/lib/magnific-popup/magnific-popup.min.js')}}"></script>
     <script src="{{url('/assets/anahata/lib/sticky/sticky.js')}}"></script> 
+    <script src="{{url('/assets/anahata/lib/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{url('/assets/anahata/lib/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
     
     <script src="{{url('/assets/anahata/js/main.js')}}"></script>
     

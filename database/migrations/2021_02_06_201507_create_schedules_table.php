@@ -17,7 +17,8 @@ class CreateSchedulesTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('user_id');
             $table->string('state')->default('PENDING');
-            $table->timestamp('date');
+            $table->timestamp('start_time')->nullable();
+            $table->timestamp('end_time')->nullable();
 
             $table->foreign('user_id')
                 ->references('id')

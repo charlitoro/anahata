@@ -18,6 +18,7 @@ class CreateServicesTable extends Migration
             $table->string('image')->nullable();
             $table->string('text');
             $table->double('price');
+            $table->time('time')->default('01:00:00');
             $table->timestamps();
         });
     }

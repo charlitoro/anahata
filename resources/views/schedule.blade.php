@@ -37,35 +37,19 @@
                 <form name="sentMessage" class="well" id="contactForm"  novalidate> 
                   
                   <div class="control-group">
-          
                       <div class="form-group">
-                        <label class="mb-3 lead">Servicios</label>
-                        <!-- Multiselect dropdown -->
-                        <select multiple data-style="bg-white rounded-pill px-4 py-3 shadow-sm " class="selectpicker w-100 form-control">
-                          <option>United Kingdom</option>
-                          <option>United States</option>
-                          <option>France</option>
-                          <option>Germany</option>
-                          <option>Italy</option>
-                        </select><!-- End -->
+                        <div class="controls">
+                          <label>Servicios</label>
+                          <select multiple class="selectpicker w-100 form-control border">
+                            <option>United Kingdom</option>
+                            <option>United States</option>
+                            <option>France</option>
+                            <option>Germany</option>
+                            <option>Italy</option>
+                          </select>
+                        </div>
                       </div>
-                    
                   </div>
-
-                  <div class="control-group">
-                    <div class="form-group">
-                      <input 
-                        type="text" 
-                        class="form-control" 
-                        placeholder="Full Name" 
-                        id="name" 
-                        required
-                        data-validation-required-message="Please enter your name" 
-                      />
-                      <p class="help-block"></p>
-
-                    </div>
-                  </div> 	
 
                   <div class="form-group">
                     <div class="controls">

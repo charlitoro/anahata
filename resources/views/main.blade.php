@@ -72,7 +72,7 @@
                 <div class="col-lg-4">
                     <div class="box wow fadeInLeft">
                     <div class="icon svgImg"><img src="{{URL::asset('assets/anahata/img/pedicure.png')}}" alt=""></div>
-                        <h4 class="title"><a href="">Manicure y Pedicure</a></h4>
+                        <h4 class="title"><a href="{{url('/services')}}">Manicure y Pedicure</a></h4>
                         <p class="description">Tradicional o semipermanente para damas y caballeros.</p>
                     </div>
                 </div>
@@ -80,7 +80,7 @@
                 <div class="col-lg-4">
                     <div class="box wow fadeInRight">
                     <div class="icon svgImg"><img src="{{URL::asset('assets/anahata/img/limp_facial.png')}}" alt=""></div>
-                        <h4 class="title"><a href="">Limpieza facial</a></h4>
+                        <h4 class="title"><a href="{{url('/services')}}">Limpieza facial</a></h4>
                         <p class="description">General o profunda. tratamientos para acné</p>
                     </div>
                 </div>
@@ -88,7 +88,7 @@
                 <div class="col-lg-4">
                     <div class="box wow fadeInLeft" data-wow-delay="0.2s">
                     <div class="icon svgImg"><img src="{{URL::asset('assets/anahata/img/repolarizacion.png')}}" alt=""></div>
-                        <h4 class="title"><a href="">Repolarización capilar</a></h4>
+                        <h4 class="title"><a href="{{url('/services')}}">Repolarización capilar</a></h4>
                         <p class="description">Reestructurar, revitalizar, nutrir, hidratar o para la caida.</p>
                     </div>
                 </div>
@@ -128,15 +128,15 @@
           
         </div>
         
-        <div class="owl-carousel clients-carousel">
-          <!--<a href="{{url('/services')}}" class="btn btn-success btn-lg ">Linea especial masculina</a> -->
+        <!--<div class="owl-carousel clients-carousel">
+          <a href="{{url('/services')}}" class="btn btn-success btn-lg ">Linea especial masculina</a> 
           <img src="{{URL::asset('assets/anahata/img/clients/caballeros.png')}}" alt="">
           <img src="{{URL::asset('assets/anahata/img/clients/promocion.jpeg')}}" alt="">
           <img src="img/clients/client-3.png" alt="">
           <img src="img/clients/client-4.png" alt="">
           <img src="img/clients/client-5.png" alt="">
           <img src="img/clients/client-6.png" alt="">
-        </div>
+        </div>-->
 
       </div>
     </section><!-- #clients --> 
@@ -210,6 +210,7 @@
             <h3 class="cta-title">Obtener nuestros servicios</h3>
             <p class="cta-text">Regístrate como cliente y agenda tu turno.</p>
           </div>
+          
           <div class="col-lg-3 cta-btn-container text-center">
             <a class="cta-btn align-middle" href="{{url('/schedule')}}">Agendar turno</a>
           </div>

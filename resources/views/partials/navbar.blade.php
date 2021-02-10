@@ -10,13 +10,16 @@
     <li>
       <form action="{{ url('/logout') }}" method="POST" style="display:inline">
         {{ csrf_field() }}
-        <button type="submit" class="btn btn-link nav-link" style="display:inline;cursor:pointer">
+        <button type="submit" class="btn btn-link nav-link " style="display:inline;cursor:pointer" >
           Cerrar sesión
         </button>
+        
       </form></li>
     @else
-      <li><a href="/login">Inicio Sesión</a></li>
+      <li><a href="/login">Inicio sesión</a></li>
     @endif
   </ul>
 
 </nav>
+
+<!--class="btn btn-link nav-link" style="display:inline;cursor:pointer"-->

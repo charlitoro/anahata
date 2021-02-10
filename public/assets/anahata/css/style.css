@@ -1111,7 +1111,7 @@ p.help-block li {
 
 #contact .contact-info address, #contact .contact-info p {
   margin-bottom: 0;
-  color: rgb(253, 250, 250);
+  color: rgb(0,0,0);
   display: block;
   float: left;
   width: 100%;
@@ -1127,13 +1127,13 @@ p.help-block li {
   margin-bottom: 15px;
   font-weight: bold;
   text-transform: uppercase;
-  color: #ffffff;
+  color: #1c4450;;
   float: left;
   margin: 8px 15px;
 }
 
 #contact .contact-info a {
-  color: rgb(253, 252, 252);
+  color: rgb(0,0,0);
 }
 
 #contact .contact-info a:hover {

@@ -1259,6 +1259,7 @@ p.help-block li {
 .btn_derecha{
   display: flex;
   justify-content: center;
+  padding-bo: 60px;
 }
 
 .poster{
@@ -1287,3 +1288,14 @@ p.help-block li {
 .btn.dropdown-toggle:focus {
   outline: none !important;
 }
+
+.precio{
+  padding-top: 60px;
+  color: rgb(42, 173, 64);
+  text-align: center;
+}
+
+.tiempo{
+  text-align: center;
+}
+

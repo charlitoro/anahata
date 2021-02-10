@@ -12,6 +12,9 @@
 
         <div class="hero-content">
             <h2><br><span>Servicios</span></h2>
+            <div>
+                <a href="{{url('/schedule')}}" class="btn-banner">Agendar turno</a> 
+            </div>
             
         </div>
 
@@ -27,16 +30,19 @@
       <div class="container"> 
 
         <div class="row">
-
+          @foreach( $arrayServicios ?? '' as $key => $servicio )
           <div class="col-lg-4">
             <div class="box wow fadeInLeft">
-              <div class="icon"><i class="fa fa-bar-chart"></i></div>
-              <h4 class="title"><a href="">Marketing</a></h4>
-              <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt fugiat culpa esse aute nulla.</p>
+              <!--<div class="icon"><i class="fa fa-bar-chart"></i></div>-->
+              <img src="{{$servicio->image}}" style="height:200px" class="icon"/>
+              <h4 class="title">{{$servicio->text}}</h4>
+              <h5 class="description precio">$  {{$servicio->price}}</h5>
+              <h5 class="description tiempo"> Tiempo estimado del servicio:   {{$servicio->time}}  horas</h5>
             </div>
           </div>
+          @endforeach
 
-          <div class="col-lg-4">
+          <!--<div class="col-lg-4">
             <div class="box wow fadeInRight">
               <div class="icon"><i class="fa fa-picture-o"></i></div>
               <h4 class="title"><a href="">Consulting</a></h4>
@@ -74,7 +80,7 @@
               <h4 class="title"><a href="">Creative</a></h4>
               <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt fugiat culpa esse aute nulla.</p>
             </div>
-          </div>
+          </div>-->
         </div>
 
       </div>

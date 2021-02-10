@@ -49,11 +49,11 @@
                           <label>Servicios</label>
                           <!-- TODO: llamar en el back los servicios y listarlos -->
                           <select multiple name="services[]" class="selectpicker w-100 form-control border">
-                            <option value=1>United Kingdom</option>
-                            <option value=2>United States</option>
-                            <option value=3>France</option>
-                            <option value=4>Germany</option>
-                            <option value=5>Italy</option>
+                            <option value=1>Manicure y Pedicure</option>
+                            <option value=2>Limpieza Facial</option>
+                            <option value=3>Renovación Capilar</option>
+                            <option value=4>Depilación en Sera</option>
+                            <option value=5>Alisado Permanente</option>
                           </select>
                         </div>
                       </div>
@@ -74,9 +74,10 @@
                       <!-- TODO: poner las fechas disponibles, si se selcciona otro 
                       luego validar las fecha permitidas en el back -->
                       <datalist id="days">
-                        <option label="Independence Day">2013-07-04</option>
-                        <option label="Labor Day">2013-09-02</option>
-                        <option label="Columbus Day">2013-10-14</option>
+                        <option label="Viernes">2021-02-12</option>
+                        <option label="Sabado">2021-02-13</option>
+                        <option label="Domingo">2021-02-14</option>
+                        <option label="Lunes">2021-02-15</option>
                       </datalist>
                     </div>
                   </div> 	
@@ -95,10 +96,9 @@
                       <!-- TODO: poner los tiempos disponibles, si se selcciona otro 
                       luego validar las horas permitidas en el back -->
                       <datalist id="times">
-                        <option label="Midnight">00:00</option>
-                        <option>06:00</option>
-                        <option label="Noon">12:00</option>
-                        <option>18:00</option>
+                        <option label="Mañana">09:00</option>
+                        <option label="Tarde">14:00</option>
+                        <option label="Tarde">18:00</option>
                       </datalist>
                     </div>
                   </div> 	

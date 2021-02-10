@@ -9,7 +9,7 @@
           </div>
 
           <div class="hero-content">
-              <h2><span>Agenda Tu Turno</span><br/>Seleciona el dia y la hora y con gusto te visitaremos</h2>
+              <h2><span>Agenda Tu Turno</span><br/>Selecciona el día y la hora y con gusto te visitaremos</h2>
           </div>
       </div> 
   </section> 

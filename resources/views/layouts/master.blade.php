@@ -60,8 +60,6 @@
     <script src="{{url('/assets/anahata/lib/magnific-popup/magnific-popup.min.js')}}"></script>
     <script src="{{url('/assets/anahata/lib/sticky/sticky.js')}}"></script> 
     <script src="{{url('/assets/anahata/lib/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-    
-    
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
 

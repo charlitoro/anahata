@@ -27,6 +27,7 @@ Route::get('/', [MainController::class, 'getMain']);
 Route::get('services', [ServicesController::class, 'getServices']); 
 
 Route::get('schedule', [ScheduleController::class, 'getSchedule'])->middleware('auth'); 
+Route::post('schedule', [ScheduleController::class, 'postCreate'])->middleware('auth'); 
 
 Route::get('about', [AboutController::class, 'getAbout']); 
 

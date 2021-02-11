@@ -21,7 +21,10 @@ class ScheduleController extends Controller{
     public function getSchedule(){
         // TODO: llamar de nase de datos segun el calculo del usuuario en session
         $user = Auth::User();
-        return view('schedule', array( 'pendingSchedules' => $this->schedulesDataSet ));
+        return view('schedule', array( 
+            'pendingSchedules' => $this->schedulesDataSet, 
+            'services' => Service::all()
+         ));
     }
 
     public function postCreate( Request $request ){

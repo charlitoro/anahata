@@ -19,6 +19,7 @@ class CreateSchedulesTable extends Migration
             $table->string('state')->default('PENDING');
             $table->timestamp('start_time')->nullable();
             $table->timestamp('end_time')->nullable();
+            $table->timestamps();
 
             $table->foreign('user_id')
                 ->references('id')

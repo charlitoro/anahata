@@ -13,7 +13,7 @@ class CreateScheduleServiceTable extends Migration
      */
     public function up()
     {
-        Schema::create('scheduleService', function (Blueprint $table) {
+        Schema::create('schedule_services', function (Blueprint $table) {
             $table->unsignedInteger('schedule_id');
             $table->unsignedInteger('service_id');
             $table->timestamps();
@@ -37,6 +37,6 @@ class CreateScheduleServiceTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('scheduleService');
+        Schema::dropIfExists('schedule_services');
     }
 }

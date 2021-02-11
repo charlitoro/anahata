@@ -47,13 +47,10 @@
                       <div class="form-group">
                         <div class="controls">
                           <label>Servicios</label>
-                          <!-- TODO: llamar en el back los servicios y listarlos -->
                           <select multiple name="services[]" class="selectpicker w-100 form-control border">
-                            <option value=1>Manicure y Pedicure</option>
-                            <option value=2>Limpieza Facial</option>
-                            <option value=3>Renovación Capilar</option>
-                            <option value=4>Depilación en Sera</option>
-                            <option value=5>Alisado Permanente</option>
+                            @foreach( $services as $service )
+                              <option value={{$service->id}}>{{$service->text}}</option>
+                            @endforeach
                           </select>
                         </div>
                       </div>
@@ -69,16 +66,7 @@
                         id="date" 
                         required
                         data-validation-required-message="Seleccione la fecha del turno"
-                        list="days" 
                       />
-                      <!-- TODO: poner las fechas disponibles, si se selcciona otro 
-                      luego validar las fecha permitidas en el back -->
-                      <datalist id="days">
-                        <option label="Viernes">2021-02-12</option>
-                        <option label="Sabado">2021-02-13</option>
-                        <option label="Domingo">2021-02-14</option>
-                        <option label="Lunes">2021-02-15</option>
-                      </datalist>
                     </div>
                   </div> 	
                   <div class="form-group">
@@ -96,9 +84,16 @@
                       <!-- TODO: poner los tiempos disponibles, si se selcciona otro 
                       luego validar las horas permitidas en el back -->
                       <datalist id="times">
+                        <option label="Mañana">08:00</option>
                         <option label="Mañana">09:00</option>
+                        <option label="Mañana">10:00</option>
+                        <option label="Mañana">11:00</option>
                         <option label="Tarde">14:00</option>
+                        <option label="Tarde">15:00</option>
+                        <option label="Tarde">16:00</option>
+                        <option label="Tarde">17:00</option>
                         <option label="Tarde">18:00</option>
+                        <option label="Tarde">19:00</option>
                       </datalist>
                     </div>
                   </div> 	

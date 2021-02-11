@@ -26,7 +26,7 @@
           <div class="col-lg-5"> 
             <h3>{{ Auth::User()->name }}</h3><br/><br/>
             <h4>Estos son tus turnos agendados</h4>
-            <!-- TODO: consultar a base de datos los turnos disponibles -->
+            <!-- TODO: consultar a base de datos los turnos pendientes -->
             <br/>
             @foreach( $pendingSchedules as $key => $schedule )
               <div class="contact-address">
@@ -81,8 +81,6 @@
                         data-validation-required-message="Seleccione la hora del turno"  
                         list="times" 
                       />
-                      <!-- TODO: poner los tiempos disponibles, si se selcciona otro 
-                      luego validar las horas permitidas en el back -->
                       <datalist id="times">
                         <option label="Mañana">08:00</option>
                         <option label="Mañana">09:00</option>

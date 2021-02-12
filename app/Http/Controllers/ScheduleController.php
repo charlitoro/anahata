@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Schedule;
 use App\Models\Service;
+use App\Models\User;
+use DateTime;
+
+date_default_timezone_set('America/Bogota');
 
 class ScheduleController extends Controller{
 
@@ -19,10 +23,18 @@ class ScheduleController extends Controller{
     }
 
     public function getSchedule(){
-        // TODO: llamar de nase de datos segun el calculo del usuuario en session
         $user = Auth::User();
+        $userSchedules = User::find($user->id)->schedules->where('state', 'PENDING');
+        $schedulesData = array();
+        foreach( $userSchedules as $schedule ){
+            $services = Schedule::find($schedule->id)->services;
+            $servicesData = "";
+            foreach( $services as $service ){ $servicesData .= $service->text.", "; }
+            $date = new DateTime($schedule->start_time);
+            array_push($schedulesData, array('services' => $servicesData, 'date' => $date->format('d F h:i a')));
+        }
         return view('schedule', array( 
-            'pendingSchedules' => $this->schedulesDataSet, 
+            'pendingSchedules' => $schedulesData, 
             'services' => Service::all()
          ));
     }
@@ -33,19 +45,4 @@ class ScheduleController extends Controller{
         $schedule = new Schedule();
     }
 
-    //TODO: eliminar una vez se llame haga el proceso y se llame a base de datos
-    private $schedulesDataSet = array(
-        array(
-            'date' => 'Lunes 21 de Febrero - 09:00 am',
-            'services' => 'Manicure y Pedicure | Limpieza Facial',
-        ),
-        array(
-            'date' => 'Viernes 25 de Febrero - 14:30 am',
-            'services' => 'Tratamiento Capilar',
-        ),
-        array(
-            'date' => 'Miercoles 2 de Marzo - 09:00 am',
-            'services' => 'Manicure y Pedicure',
-        )
-    );
 }

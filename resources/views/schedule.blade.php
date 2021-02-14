@@ -42,7 +42,7 @@
             <div class="container">
               <div class="form"> 
           
-                <form name="sentMessage" class="well" id="contactForm" novalidate method="POST"> 
+                <form name="regiterSchedule" class="well" id="contactForm" method="POST"> 
                   {{ csrf_field() }}
                   <div class="control-group">
                       <div class="form-group">
@@ -122,7 +122,7 @@
         </div>
         <!-- Error and Success Alerts section -->
         @if( $alert ?? '')
-          <div class="alert alert-danger alert-dismissible fade show" role="alert">
+          <div class="alert {{$alert['type']}} alert-dismissible fade show" role="alert">
             <strong>{{$alert['reason']}}</strong>. {{$alert['message']}}
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
               <span aria-hidden="true">&times;</span>

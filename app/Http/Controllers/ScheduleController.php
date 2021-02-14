@@ -32,8 +32,7 @@ class ScheduleController extends Controller{
     }
 
     public function postCreate( Request $request ){
-        //TODO: Crear el registro del turno agendado teniendo en cuenta que los servicios selccionados
-        //      tiene un tiempo en el cual se debeb realizar
+        \Debugbar::info($request);
         $user = Auth::User();
         $data = $this->getPendingSchedules( $user->id );
 

@@ -53,15 +53,24 @@ class ScheduleController extends Controller{
         $services = DB::table('services')->whereIn('id', $services)->get();
         $totalHours = 0; $totalMinuts = 0;
         foreach( $services as $service ){
-            $time = new DateTime($service->time);
-            $totalHours += intval($time->format('H'));
-            $totalMinuts += intval($time->format('i'));
+            $timeService = new DateTime($service->time);
+            $totalHours += intval($timeService->format('H'));
+            $totalMinuts += intval($timeService->format('i'));
         }
         $totalSeconds = ($totalHours*3600) + ($totalMinuts*60);
 
-        $startTime = new Datetime("{$date} {$time}");
-        $endTime = new Datetime("{$date} {$time}");
+        $startTime = new DateTime("{$date} {$time}");
+        $endTime = new DateTime("{$date} {$time}");
         $endTime->add( new DateInterval("PT{$totalSeconds}S"));
+
+        if( $startTime < new DateTime() ){
+            $alert = array('alert' => array(
+                'type' => 'alert-danger',
+                'reason' => 'Fecha incorrecta',
+                'message' => 'No es posible agendar citas en fecha pasadas'
+            ));
+            return view('schedule', array_merge($data, $alert));
+        }
 
         if( $this->validateSchedule( $startTime, $endTime ) == false ){
             $alert = array('alert' => array(

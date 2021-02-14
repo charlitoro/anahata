@@ -5,7 +5,6 @@
     <div class="container">
 
         <div class="hero-banner">
-            <!-- TODO: Pending image src -->
             <img src="#" alt="" class="img-fluid">
         </div>
 

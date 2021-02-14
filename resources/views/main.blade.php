@@ -5,7 +5,6 @@
     <div class="container">
 
         <div class="hero-banner">
-            <!-- TODO: Pending image src -->
             <img src="#" alt="" class="img-fluid">
         </div>
 
@@ -67,8 +66,6 @@
             
 
             <div class="row">
-            
-            <!--TODO:Hacer llamado a la base de datos para listar servicios-->
                 <div class="col-lg-4">
                     <div class="box wow fadeInLeft">
                     <div class="icon svgImg"><img src="{{URL::asset('assets/anahata/img/pedicure.png')}}" alt=""></div>
@@ -93,11 +90,6 @@
                     </div>
                 </div>
 
-                
-                
-                  
-                
- 
             </div>
             
             <div class="btn_derecha">

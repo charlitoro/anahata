@@ -31,10 +31,21 @@ class ScheduleController extends Controller{
         return view('schedule', $this->getPendingSchedules( $user->id ));
     }
 
-    public function postCreate( Request $request ){
-        \Debugbar::info($request);
+    public function deleteSchedule( Request $request ){
         $user = Auth::User();
-        $data = $this->getPendingSchedules( $user->id );
+
+        Schedule::where('id', '=', $request->cancelSchedule)->delete();
+        $alert = array('alert' => array(
+            'type' => 'alert-success',
+            'reason' => 'Cita cacelada',
+            'message' => 'La cita fue cancelada con exito'
+        ));
+
+        return view('schedule', array_merge($this->getPendingSchedules( $user->id ), $alert));
+    }
+
+    public function postCreate( Request $request ){
+        $user = Auth::User();
 
         $date = $request->input('date');
         $time = $request->input('time');
@@ -46,7 +57,7 @@ class ScheduleController extends Controller{
                 'reason' => 'Atributos no proporcionados',
                 'message' => 'Los datos del los servicios, fecha y hora son requeridos para realizar la cita'
             ));
-            return view('schedule', array_merge($data, $alert));
+            return view('schedule', array_merge($this->getPendingSchedules( $user->id ), $alert));
         };
 
         $services = DB::table('services')->whereIn('id', $services)->get();
@@ -111,7 +122,7 @@ class ScheduleController extends Controller{
             $servicesData = "";
             foreach( $services as $service ){ $servicesData .= $service->text.", "; }
             $date = new DateTime($schedule->start_time);
-            array_push($schedulesData, array('services' => $servicesData, 'date' => $date->format('d F h:i a')));
+            array_push($schedulesData, array('id' => $schedule->id, 'services' => $servicesData, 'date' => $date->format('d F h:i a')));
         }
         return array( 
             'pendingSchedules' => $schedulesData, 

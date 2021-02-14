@@ -24,18 +24,23 @@
 
         <div class="row contact-info">
           <div class="col-lg-5"> 
-            <h3>{{ Auth::User()->name }}</h3><br/><br/>
-            <h4>Estos son tus turnos agendados</h4>
-            <!-- TODO: consultar a base de datos los turnos pendientes -->
-            <br/>
-            @foreach( $pendingSchedules as $key => $schedule )
-              <div class="contact-address">
-                <i class="ion-ios-time-outline"></i>
-                <h3>{{ $schedule['date'] }}</h3>
-                <button type="button" class="btn btn-outline-danger"><i class="ion-ios-trash-outline"></i></button>
-                <address>{{ $schedule['services'] }}</address>
-              </div> 
-            @endforeach
+            <form name="scheduleProcess" method="POST" >
+              {{method_field('DELETE')}}
+              {{ csrf_field() }}
+              <h3>{{ Auth::User()->name }}</h3><br/><br/>
+              <h4>Estos son tus turnos agendados</h4>
+              <br/>
+              @foreach( $pendingSchedules as $key => $schedule )
+                <div class="contact-address">
+                  <i class="ion-ios-time-outline"></i>
+                  <h3>{{ $schedule['date'] }}</h3>
+                  <button name='cancelSchedule' type="submit" value={{$schedule['id']}} type="button" class="btn btn-outline-danger"  style="padding-top: 0px; padding-bottom: 0px;">
+                    <i class="ion-ios-trash-outline"></i>
+                  </button>
+                  <address>{{ $schedule['services'] }}</address>
+                </div> 
+              @endforeach
+            </form>
           </div>
 
           <div class="col-lg-7">

@@ -95,6 +95,7 @@ class ScheduleController extends Controller{
         $newSchedule = new Schedule();
         $newSchedule->user_id = $user->id;
         $newSchedule->state = 'PENDING';
+        $newSchedule->observation = $observation;
         $newSchedule->start_time = $startTime;
         $newSchedule->end_time = $endTime;
         $newSchedule->save();

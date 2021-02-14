@@ -44,6 +44,7 @@ class DatabaseSeeder extends Seeder
     $user->id = 1;
     $user->name = 'Erika Orbes';
     $user->email = 'erika.ax.18@gmail.com';
+    $user->role = 'ADMIN';
     $user->address = 'cra 36 b 5a-27 Anganoy';
     $user->phone = '3155270969';
     $user->password = bcrypt('@ErikaOrbes24');
@@ -53,10 +54,21 @@ class DatabaseSeeder extends Seeder
     $user2->id = 2;
     $user2->name = 'Ana Rodriguez';
     $user2->email = 'anitaro@gmail.com';
+    $user2->role = 'CLIENT';
     $user2->address = 'Mz e cs 10 Lorenzo';
     $user2->phone = '3116634808';
     $user2->password = bcrypt('AnitaRodriguez123');
     $user2->save();
+
+    $user3 = new User;
+    $user3->id = 3;
+    $user3->name = 'Andres Toro';
+    $user3->email = 'charlitoro@gmail.com';
+    $user3->role = 'CLIENT';
+    $user3->address = 'CD 16 #46-34 Barrio Figueroa';
+    $user3->phone = '3136657237';
+    $user3->password = bcrypt('charlitoro12');
+    $user3->save();
   }
   
   private function seedService(){
@@ -233,6 +245,7 @@ class DatabaseSeeder extends Seeder
       'id' => 1,
       'user_id' => 1,
       'state' => 'PENDING',
+      'observation' => 'Some...',
       'start_time' => '2021-02-22 09:00:00',
       'end_time' => '2021-02-22 11:00:00'
     ),
@@ -240,6 +253,7 @@ class DatabaseSeeder extends Seeder
       'id' => 2,
       'user_id' => 1,
       'state' => 'HECHO',
+      'observation' => 'Some...',
       'start_time' => '2021-02-15 16:00:00',
       'end_time' => '2021-02-15 17:30:00'
     ),
@@ -247,6 +261,7 @@ class DatabaseSeeder extends Seeder
       'id' => 3,
       'user_id' => 1,
       'state' => 'PENDING',
+      'observation' => 'Some...',
       'start_time' => '2021-02-19 14:00:00',
       'end_time' => '2021-02-19 15:30:00'
     ),
@@ -254,6 +269,7 @@ class DatabaseSeeder extends Seeder
       'id' => 4,
       'user_id' => 1,
       'state' => 'CANCEL',
+      'observation' => 'Some...',
       'start_time' => '2021-02-23 10:30:00',
       'end_time' => '2021-02-23 11:30'
     ),
@@ -261,6 +277,7 @@ class DatabaseSeeder extends Seeder
       'id' => 5,
       'user_id' => 2,
       'state' => 'PENDING',
+      'observation' => 'Some...',
       'start_time' => '2021-02-22 14:00:00',
       'end_time' => '2021-02-22 16:00:00'
     ),
@@ -268,6 +285,7 @@ class DatabaseSeeder extends Seeder
       'id' => 6,
       'user_id' => 1,
       'state' => 'PENDING',
+      'observation' => 'Some...',
       'start_time' => '2021-02-23 10:00:00',
       'end_time' => '2021-02-23 10:30:00'
     )

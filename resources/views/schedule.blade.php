@@ -32,6 +32,7 @@
               <div class="contact-address">
                 <i class="ion-ios-time-outline"></i>
                 <h3>{{ $schedule['date'] }}</h3>
+                <button type="button" class="btn btn-outline-danger"><i class="ion-ios-trash-outline"></i></button>
                 <address>{{ $schedule['services'] }}</address>
               </div> 
             @endforeach
@@ -112,13 +113,22 @@
                     </div>
                   </div> 		 
                   <div id="success"> </div> <!-- For success/fail messages -->
-                  <button type="submit" class="btn btn-primary pull-right">Agendar</button><br />
-                </form>
+                  <button type="submit" class="btn btn-primary pull-right">Agendar</button><br /><br />
+                </form>  
               </div>
-
             </div>  
+
           </div>
         </div>
+        <!-- Error and Success Alerts section -->
+        @if( $alert ?? '')
+          <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>{{$alert['reason']}}</strong>. {{$alert['message']}}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        @endif
       </div>
  
     </section><!-- #contact -->

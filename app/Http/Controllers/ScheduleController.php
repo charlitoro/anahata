@@ -7,7 +7,9 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Schedule;
 use App\Models\Service;
 use App\Models\User;
+use DateInterval;
 use DateTime;
+use Illuminate\Support\Facades\DB;
 
 date_default_timezone_set('America/Bogota');
 
@@ -24,7 +26,56 @@ class ScheduleController extends Controller{
 
     public function getSchedule(){
         $user = Auth::User();
-        $userSchedules = User::find($user->id)->schedules->where('state', 'PENDING');
+
+        return view('schedule', $this->getPendingSchedules( $user->id ));
+    }
+
+    public function postCreate( Request $request ){
+        //TODO: Crear el registro del turno agendado teniendo en cuenta que los servicios selccionados
+        //      tiene un tiempo en el cual se debeb realizar
+        // $schedule = new Schedule(); 
+        $user = Auth::User();
+        $data = $this->getPendingSchedules( $user->id );
+
+        $date = $request->input('date');
+        $time = $request->input('time');
+        $services = $request->input('services');
+        $observation = $request->input('observation');
+        if( !isset($date) || !isset($time) || !isset($services) ){
+            $alert = array('alert' => array(
+                'type' => 'alert-danger',
+                'reason' => 'Atributos no proporcionados',
+                'message' => 'Los datos del los servicios, fecha y hora son requeridos para realizar la cita'
+            ));
+            return view('schedule', array_merge($data, $alert));
+        };
+
+        $services = DB::table('services')->whereIn('id', $services)->get();
+        $totalHours = 0; $totalMinuts = 0;
+        foreach( $services as $service ){
+            $time = new DateTime($service->time);
+            $totalHours += intval($time->format('H'));
+            $totalMinuts += intval($time->format('i'));
+        }
+        $totalSeconds = ($totalHours*3600) + ($totalMinuts*60);
+
+        $startTime = new Datetime("{$date} {$time}");
+        $endTime = new Datetime("{$date} {$time}");
+        $endTime->add( new DateInterval("PT{$totalSeconds}S"));
+
+        if( $this->validateSchedule( $startTime, $endTime ) == false ){
+            $alert = array('alert' => array(
+                'type' => 'alert-danger',
+                'reason' => 'Horario no disopinble',
+                'message' => 'La fecha que trata de agendar no se encuentra disponible'
+            ));
+            return view('schedule', array_merge($data, $alert));
+        }
+        return view('schedule', $data);
+    }
+
+    private function getPendingSchedules( $userId ){
+        $userSchedules = User::find($userId)->schedules->where('state', 'PENDING');
         $schedulesData = array();
         foreach( $userSchedules as $schedule ){
             $services = Schedule::find($schedule->id)->services;
@@ -33,16 +84,38 @@ class ScheduleController extends Controller{
             $date = new DateTime($schedule->start_time);
             array_push($schedulesData, array('services' => $servicesData, 'date' => $date->format('d F h:i a')));
         }
-        return view('schedule', array( 
+        return array( 
             'pendingSchedules' => $schedulesData, 
             'services' => Service::all()
-         ));
+        );
     }
 
-    public function postCreate( Request $request ){
-        //TODO: Crear el registro del turno agendado teniendo en cuenta que los servicios selccionados
-        //      tiene un tiempo en el cual se debeb realizar
-        $schedule = new Schedule();
+    private function validateSchedule( $startTime, $endTime ){
+
+        $allPendingSchedules = DB::table('schedules')
+            ->where('state', 'PENDING')
+            ->where('end_time', '>', new DateTime())
+            ->get();
+        
+        foreach( $allPendingSchedules as $row ){
+            \Debugbar::info('Horarios Pendientes');
+            \Debugbar::info($row->state."  ".$row->start_time);
+        }
+
+        if( $allPendingSchedules ){
+            foreach( $allPendingSchedules as $row ){
+                $rowStartTime = new DateTime($row->start_time);
+                $rowEndTime = new DateTime($row->end_time);
+                if( 
+                    ($rowStartTime < $startTime && $rowEndTime > $startTime) ||
+                    ($rowStartTime < $endTime && $rowEndTime > $endTime) ||
+                    ($rowStartTime > $startTime && $rowEndTime < $endTime)
+                 ){
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Schedule;
+use App\Models\ScheduleService;
 use App\Models\Service;
 use App\Models\User;
 use DateInterval;
@@ -33,7 +34,6 @@ class ScheduleController extends Controller{
     public function postCreate( Request $request ){
         //TODO: Crear el registro del turno agendado teniendo en cuenta que los servicios selccionados
         //      tiene un tiempo en el cual se debeb realizar
-        // $schedule = new Schedule(); 
         $user = Auth::User();
         $data = $this->getPendingSchedules( $user->id );
 
@@ -69,7 +69,7 @@ class ScheduleController extends Controller{
                 'reason' => 'Fecha incorrecta',
                 'message' => 'No es posible agendar citas en fecha pasadas'
             ));
-            return view('schedule', array_merge($data, $alert));
+            return view('schedule', array_merge($this->getPendingSchedules( $user->id ), $alert));
         }
 
         if( $this->validateSchedule( $startTime, $endTime ) == false ){
@@ -78,9 +78,30 @@ class ScheduleController extends Controller{
                 'reason' => 'Horario no disopinble',
                 'message' => 'La fecha que trata de agendar no se encuentra disponible'
             ));
-            return view('schedule', array_merge($data, $alert));
+            return view('schedule', array_merge($this->getPendingSchedules( $user->id ), $alert));
         }
-        return view('schedule', $data);
+
+        // Creation schedule
+        $newSchedule = new Schedule();
+        $newSchedule->user_id = $user->id;
+        $newSchedule->state = 'PENDING';
+        $newSchedule->start_time = $startTime;
+        $newSchedule->end_time = $endTime;
+        $newSchedule->save();
+
+        // Creation ScheduleServices
+        foreach( $services as $service ){
+            $new = new ScheduleService();
+            $new->schedule_id = $newSchedule->id;
+            $new->service_id = $service->id;
+            $new->save();
+        }
+        $alert = array('alert' => array(
+            'type' => 'alert-success',
+            'reason' => 'Cita Registrada con exito',
+            'message' => 'Te estaremos visitando para atenderte con todo el gusto'
+        ));
+        return view('schedule', array_merge($this->getPendingSchedules( $user->id ), $alert));
     }
 
     private function getPendingSchedules( $userId ){
@@ -105,11 +126,6 @@ class ScheduleController extends Controller{
             ->where('state', 'PENDING')
             ->where('end_time', '>', new DateTime())
             ->get();
-        
-        foreach( $allPendingSchedules as $row ){
-            \Debugbar::info('Horarios Pendientes');
-            \Debugbar::info($row->state."  ".$row->start_time);
-        }
 
         if( $allPendingSchedules ){
             foreach( $allPendingSchedules as $row ){

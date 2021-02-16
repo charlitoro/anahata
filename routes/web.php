@@ -17,6 +17,7 @@ use Illuminate\Auth\Middleware;
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\ScheduleAdminController;
 use App\Http\Controllers\ServicesController;
 use App\Http\Controllers\ScheduleController;
 
@@ -41,3 +42,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// Admin Routs
+Route::get('/admin', [ScheduleAdminController::class, 'index'])->middleware('auth');
+Route::post('/admin', [ScheduleAdminController::class, 'postAction'])->middleware('auth');
+Route::get('/admin/list', [ScheduleAdminController::class, 'getSchedules' ])->name('admin.list')->middleware('auth');

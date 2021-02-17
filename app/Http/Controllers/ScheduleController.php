@@ -28,6 +28,10 @@ class ScheduleController extends Controller{
     public function getSchedule(){
         $user = Auth::User();
 
+        if( $user->role == 'ADMIN' ){
+            return redirect('/admin');
+        }
+
         return view('schedule', $this->getPendingSchedules( $user->id ));
     }
 

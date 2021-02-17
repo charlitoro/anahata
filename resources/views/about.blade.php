@@ -84,10 +84,9 @@
                 <span>Esteticista integral</span>
                 
                 <div class="social">
-                  <a href=""><i class="fa fa-twitter"></i></a>
+                  <a href="{{url('https://www.instagram.com/erikaorbes/')}}"><i class="fa fa-instagram"></i></a>
                   <a href="{{url('https://www.facebook.com/erika.orbes/')}}"><i class="fa fa-facebook"></i></a>
-                  <a href=""><i class="fa fa-google-plus"></i></a>
-                  <a href=""><i class="fa fa-linkedin"></i></a>
+                  <a href="{{url('https://www.linkedin.com/in/erika-orbes-1651a7207/')}}"><i class="fa fa-linkedin"></i></a>
                 </div>
                 <p>Esteticista profesional especialista en manicura y pedicura con reflexología,
                   reikista y terapeuta con 10 años de experiencia.

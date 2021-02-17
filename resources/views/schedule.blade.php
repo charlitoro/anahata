@@ -19,7 +19,7 @@
     <section id="contact" class="wow fadeInUp">
       <div class="container">
         <div class="section-header"> 
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt fugiat culpa esse aute nulla. malis nulla duis fugiat culpa esse aute nulla ipsum velit export irure minim illum fore</p>
+          <p>Selecciona la fecha y la hora y verifica la disponibilidad de turnos, además podrás observar tus turnos agendados</p>
         </div>
 
         <div class="row contact-info">
